@@ -13,6 +13,12 @@ class UsersController < ApplicationController
 
   def create
     # create new user
+    @user = User.new(user_params)
+    if @user.save
+      good
+    else 
+      bad
+    end
   end
 
   def edit
@@ -25,5 +31,10 @@ class UsersController < ApplicationController
 
   def destroy
     # delete user completely
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:f_name, :l_name, :email, :password, :password_confirmation)
   end
 end

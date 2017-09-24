@@ -305,14 +305,26 @@
 
 14
 15
-16</pre>
+16
+17
+18
+19
+20
+21
+22</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
   <span class='comment'># create new user
-</span><span class='kw'>end</span></pre>
+</span>  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="User.html" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_user_params'>user_params</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+    <span class='id identifier rubyid_good'>good</span>
+  <span class='kw'>else</span> 
+    <span class='id identifier rubyid_bad'>bad</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -333,12 +345,12 @@
       <pre class="lines">
 
 
-26
-27
-28</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
   <span class='comment'># delete user completely
@@ -363,12 +375,12 @@
       <pre class="lines">
 
 
-18
-19
-20</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edit'>edit</span>
   <span class='comment'>#edit existing user
@@ -483,12 +495,12 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
   <span class='comment'># update existing user
@@ -503,7 +515,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Sep 24 09:52:01 2017 by
+  Generated on Sun Sep 24 14:17:13 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
