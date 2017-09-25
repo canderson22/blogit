@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
+  before_action :authorize, only: [:show, :edit, :update, :destroy]
   def index
   end
 
   def show
     # show specific user
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -15,9 +17,10 @@ class UsersController < ApplicationController
     # create new user
     @user = User.new(user_params)
     if @user.save
-      good
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else 
-      bad
+      redirect_to new_user_path
     end
   end
 
