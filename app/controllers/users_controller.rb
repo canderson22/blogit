@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def show
     # show specific user
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:id])
+    if current_user.id != @user.id
+      flash[:warning] = "You dont have access!"
+      redirect_to user_path(session[:user_id])
+    end
   end
 
   def new
@@ -20,6 +24,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else 
+      flash[:warning] = "Please double check all fields"
       redirect_to new_user_path
     end
   end
