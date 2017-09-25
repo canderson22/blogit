@@ -1,2 +1,18 @@
 <h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= form_for :user do |f| %>
+    <%= f.label :f_name, "First Name:" %>
+    <%= f.text_field :f_name %>
+    <%= f.label :l_name, "Last Name:" %>
+    <%= f.text_field :l_name %>
+    <%= f.label :email, "Email:" %>
+    <%= f.text_field :email %>
+    <%= f.label :password, "Password:" %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation, "Confirm Password:" %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit 'Save Changes', class: '' %>
+<% end %>
+
+
+Do not press this unless you serious dude!
+<%= link_to  "Delete Profile", delete_user_path, method: 'post' %>
