@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     # show specific user
     @user = User.find(params[:id])
+    @categories = Category.all
     if current_user.id != @user.id
       flash[:warning] = "You dont have access!"
       redirect_to user_path(session[:user_id])
