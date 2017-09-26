@@ -40,26 +40,15 @@ class UsersController < ApplicationController
 
   def update
     # update existing user
-    begin
-    @user = User.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      # handle not found error
-      flash[:danger] = "That page does not exist."
-      redirect_to user_path(current_user)
-    rescue ActiveRecord::ActiveRecordError
-      # handle other ActiveRecord errors
-      flash[:warning] = "Sorry there was an error."
-    rescue # StandardError
-      # handle most other errors
-    rescue Exception
-      # handle everything else
-      @user.update_attributes(user_params)
-      flash[:success] = "Profile successfully updated"
-      redirect_to user_path(@user)
-    else
-      flash[:warning] = "Please check all fields"
-      redirect_to edit_user_path(@user)
+    @user = current_user
+    if current_user.id != @user.id
+      flash[:warning] = "You dont have access!"
+      redirect_to user_path(session[:user_id])
     end
+    @user.update_attributes(user_params)
+    flash[:success] = "Profile successfully updated"
+    redirect_to user_path(@user)
+  
  
   end
 
@@ -80,4 +69,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:f_name, :l_name, :email, :password, :password_confirmation)
   end
+  
 end
