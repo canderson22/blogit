@@ -1,10 +1,10 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = current_user.blogs
+    @user = current_user
   end
 
   def show
-    @blog = current_user.blogs.find(params[:id])
+    @blog = Blog.find(params[:id])
   end
 
   def new
@@ -19,9 +19,9 @@ class BlogsController < ApplicationController
     @blog.body = params[:blog][:body]
     @blog.user = User.find(session[:user_id])
     if @blog.save 
-      redirect_to blog_path(@blog)
+      redirect_to user_blog_path(session[:user_id], @blog)
     else
-      redirect_to new_blog_path
+      redirect_to new_user_blog_path
     end
   end
 
@@ -32,16 +32,16 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update_attributes(title: params[:blog][:title], body: params[:blog][:body])
-      redirect_to blog_path(@blog)
+      redirect_to user_blog_path(@blog)
     else
-      redirect_to edit_blog_path(@blog)
+      redirect_to edit_user_blog_path(@blog)
     end
   end
 
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-    redirect_to blogs_path
+    redirect_to user_blogs_path
   end
 
 end

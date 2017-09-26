@@ -1,9 +1,9 @@
 <h1>Blogs#show</h1>
 <h2><%= @blog.title %></h2>
 
-<%= link_to  "Edit Blog", edit_blog_path(@blog) %>
+<%= link_to  "Edit Blog", edit_user_blog_path(@blog) %>
 
-<%= link_to  "Delete Blog", delete_blog_path, method: "delete" %>
+<%= link_to  "Delete Blog", delete_user_blog_path, method: "delete" %>
 
 
-<%= link_to  "Go Back", blogs_path %>
+<%= link_to  "Go Back", user_blogs_path %>

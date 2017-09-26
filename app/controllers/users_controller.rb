@@ -7,10 +7,7 @@ class UsersController < ApplicationController
     # show specific user
     @user = User.find(params[:id])
     @categories = Category.all
-    if current_user.id != @user.id
-      flash[:warning] = "You dont have access!"
-      redirect_to user_path(session[:user_id])
-    end
+    no_access
   end
 
   def new
@@ -32,19 +29,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if current_user.id != @user.id
-      flash[:warning] = "You dont have access!"
-      redirect_to user_path(session[:user_id])
-    end
+    no_access
   end
 
   def update
     # update existing user
-    @user = current_user
-    if current_user.id != @user.id
-      flash[:warning] = "You dont have access!"
-      redirect_to user_path(session[:user_id])
-    end
+    @user = User.find(params[:id])
+    no_access
     @user.update_attributes(user_params)
     flash[:success] = "Profile successfully updated"
     redirect_to user_path(@user)
