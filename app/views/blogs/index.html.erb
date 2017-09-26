@@ -2,3 +2,6 @@
 <% @blogs.each do |b| %>
     <%= link_to  b.title, blog_path(b) %>
 <% end %>
+
+
+<%= link_to  "Create New Blog", new_blog_path %>

@@ -4,8 +4,6 @@
     <%= f.text_field :f_name %>
     <%= f.label :l_name, "Last Name:" %>
     <%= f.text_field :l_name %>
-    <%= f.label :email, "Email:" %>
-    <%= f.text_field :email %>
     <%= f.label :password, "Password:" %>
     <%= f.password_field :password %>
     <%= f.label :password_confirmation, "Confirm Password:" %>
@@ -15,4 +13,4 @@
 
 
 Do not press this unless you serious dude!
-<%= link_to  "Delete Profile", delete_user_path, method: 'post' %>
+<%= link_to  "Delete Profile", delete_user_path, method: "delete" %>

@@ -365,7 +365,8 @@
 63
 64
 65
-66</pre>
+66
+67</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/users_controller.rb', line 55</span>
@@ -377,6 +378,7 @@
     <span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:warning</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You dont have access!</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_user_path'>user_path</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
+  <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:user_id</span> <span class='op'>=&gt;</span> <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_destroy_all'>destroy_all</span>
   <span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
   <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:danger</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User page deleted!</span><span class='tstring_end'>&quot;</span></span>
@@ -582,7 +584,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Sep 25 21:52:16 2017 by
+  Generated on Tue Sep 26 10:39:54 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
