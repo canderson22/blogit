@@ -1,0 +1,2 @@
+module PublicBlogsHelper
+end

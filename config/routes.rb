@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   post  '/users/:id/blogs/new' => 'blogs#create'
   delete '/users/:user_id/blogs/:id' => 'blogs#destroy', as: :delete_user_blog
 
+  resources :categories do
+    resources :public_blogs, only: [:show] do
+      resources :comments
+    end
+  end
+
   resources :categories, only: [:show]
 
 

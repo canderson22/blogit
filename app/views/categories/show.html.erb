@@ -3,6 +3,7 @@
 <% @category.blogs.each do |b| %>
     <h1><%= b.title %></h1>
     <h2><%= b.user.id %></h2>
+    <%= link_to  "View Blogs", category_public_blog_path(params[:id], b.id) %>
 <% end %>
 
 <%= link_to  "Back", user_path(@user) %>
