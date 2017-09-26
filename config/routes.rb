@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
+  resources :blogs
+
   
   delete '/logout' => 'sessions#destroy', as: :logout
 end

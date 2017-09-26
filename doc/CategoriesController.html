@@ -186,7 +186,7 @@
       <pre class="code"><span class="info file"># File 'app/controllers/categories_controller.rb', line 2</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
-  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="User.html" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span>
   <span class='ivar'>@category</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Category.html" title="Category (class)">Category</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@blogs</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by_category_id'>find_by_category_id</span><span class='lparen'>(</span><span class='ivar'>@category</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -200,7 +200,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Sep 25 21:31:06 2017 by
+  Generated on Mon Sep 25 21:52:16 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>

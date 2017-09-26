@@ -3,6 +3,10 @@
 <%= link_to  "Log Out", '/logout', method: 'delete' %>
 <%= link_to  "Edit Profile", edit_user_path %>
 
+<div>
+    <%= link_to  "View Blogs", blogs_path %>
+</div>
+
 <br><br><hr>
 <% @categories.each do |c| %>
     <%= link_to  "#{c.title}", category_path(c) %>
