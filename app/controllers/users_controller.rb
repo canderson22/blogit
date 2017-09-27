@@ -51,6 +51,7 @@ class UsersController < ApplicationController
       redirect_to user_path(session[:user_id])
     end
     Blog.where(:user_id => @user.id).destroy_all
+    Comment.where(:user_id => @user.id).destroy_all
     @user.destroy
     session[:user_id] = nil
     flash[:danger] = "User page deleted!"

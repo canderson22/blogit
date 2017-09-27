@@ -1,0 +1,7 @@
+<h1>All your comments</h1>
+<% @comments.each do |c| %>
+    <h1><%= c.blog.title %></h1>
+    <h3><%= c.body %></h3>
+    <%= link_to  "Edit Comment", edit_user_comment_path(params[:user_id], c.id) %>
+<% end %>
+

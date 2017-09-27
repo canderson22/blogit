@@ -6,7 +6,9 @@
 <div>
     <%= link_to  "View Blogs", user_blogs_path(@user.id) %>
 </div>
-
+<div>
+    <%= link_to  "View Comments", user_comments_path(@user.id) %>
+</div>
 <br><br><hr>
 <% @categories.each do |c| %>
     <%= link_to  "#{c.title}", category_path(c) %>

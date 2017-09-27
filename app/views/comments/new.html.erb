@@ -1,0 +1,6 @@
+<h1>Comments#new</h1>
+<%= form_for :comment do |f| %>
+    <%= f.label :body, "Comment:", class: '' %>
+    <%= f.text_area :body, class: '' %>
+    <%= f.submit "Post Comment" %>
+<% end %>

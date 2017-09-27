@@ -1,9 +1,12 @@
 class BlogsController < ApplicationController
   def index
-    @user = current_user
+    @user = User.find(params[:user_id])
+    no_access
   end
 
   def show
+    @user = User.find(params[:user_id])
+    no_access
     @blog = Blog.find(params[:id])
   end
 
