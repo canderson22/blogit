@@ -1,0 +1,16 @@
+<header class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col-md-2">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <%= icon('flag') %>
+            </button>
+        </div>
+        <div class="col-md-6 text-center">
+            <h3 class=" text-white">Blog It</h3>
+        </div>
+        <div class="col-md-4 align-middle text-right">
+            <%= link_to  "Sign Up", new_user_path, class: 'header-link' %>
+            <%= link_to  "Log In", new_session_path, class: 'header-link' %>
+        </div>
+    </div>
+</header>

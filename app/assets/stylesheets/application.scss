@@ -1,0 +1,19 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+#wrapper {
+    width: 100%;
+    height: auto;
+}
+
+.header-link {
+    margin-top: 17px;
+    padding: 8px;
+    color: white;
+    font-size: 1.3em;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
