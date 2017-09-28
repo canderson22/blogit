@@ -1,9 +1,22 @@
-<h1>Blogs#index</h1>
-<% @user.blogs.each do |b| %>
-    <h1><%= b.title %></h1>
-    <h3><%= link_to  "Edit blog", user_blog_path(@user.id, b.id) %></h3>
-<% end %>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h2 class="display-3 text-center text-primary">My Blogs</h2>
+        <% @user.blogs.each do |b| %>
+            <div class="border border-blog border-primary">
+                <h3 class="text-dark"><%= b.title %></h3>
+                <p class="lead">
+                    <%= b.body %>
+                </p>
+                <h3><%= link_to  "Edit blog", user_blog_path(@user.id, b.id), class: 'btn btn-sm btn-warning' %></h3>
+            </div>
+        <% end %>
+        <div>
+            <%= link_to  "Create Blog", new_user_blog_path, class: 'btn btn-lg btn-primary' %>
+        </div>
+    </div>
+</div>
 
 
-<%= link_to  "Create Blog", new_user_blog_path %>
+
+
 

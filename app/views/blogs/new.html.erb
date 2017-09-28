@@ -1,13 +1,18 @@
-<h1>Blogs#new</h1>
-<%= form_for :blog do |f| %>
-    <%= f.label :category, 'Category:', class: '' %>
-    <%= f.collection_select :category, @categories, :title, :title %>
-    
-    <%= f.label :title, 'Title:', class: '' %>
-    <%= f.text_field :title, class: '' %>
-
-    <%= f.label :body, 'Body:', class: '' %>
-    <%= f.text_area :body, class: '' %>
-    <%= f.submit %>
-
-<% end %>
+<div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3 text-center">Create Blog</h1>
+            <%= form_for :blog do |f| %>
+                <%= f.label :category, 'Category:', class: '' %>
+                <%= f.collection_select :category, @categories, :title, :title, class: 'form-control' %>
+                <br>
+                <%= f.label :title, 'Title:', class: '' %>
+                <%= f.text_field :title, class: 'form-control' %>
+            
+                <%= f.label :body, 'Body:', class: '' %>
+                <%= f.text_area :body, class: 'form-control' %>
+                <div class="btn-div">
+                    <%= f.submit "Create", class: 'btn btn-lg btn-success' %>
+                </div>
+            <% end %>   
+        </div>
+    </div>

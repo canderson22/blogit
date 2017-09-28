@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:singular] do
     resources :comments, only: [:index, :edit, :update, :destroy]
   end
+  delete '/users/:user_id/comments/:id' => 'comments#destroy', as: :delete_comment
   post '/users/:user_id/comments/:id/edit' => 'comments#update'
   
   resources :sessions, only: [:new, :create]
@@ -25,10 +26,6 @@ Rails.application.routes.draw do
       resources :comments, only: [:new, :create]
     end
   end
-
-  # resources :public_blogs, only: [:show] do
-  #   resources :comments
-  # end
 
   post '/categories/:category_id/public_blogs/:public_blog_id/comments/new' => 'comments#create'
 

@@ -1,6 +1,19 @@
-<h1>Comments#edit</h1>
-<%= form_for( :comment) do |f| %>
-    <%= f.label :body, "Body:", class: '' %>
-    <%= f.text_area :body, class: '' %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+        <div class="jumbotron">
+            <%= link_to  "Go Back", user_comments_path(current_user.id), class: 'btn btn-primary' %>
+            <h1 class="display-3 text-center">Edit Comment</h1>
+            <%= form_for( :comment) do |f| %>
+                <%= f.label :body, "Body:", class: '' %>
+                <%= f.text_area :body, class: 'form-control' %>
+                <div class="text-center btn-div">
+                    <%= f.submit "Save", class: 'btn btn-success' %>
+                </div>
+            <% end %>
+            <hr class="bg-danger">
+            <h3 class="text-danger text-center">Delete Comment</h3>
+            <p class="lead text-danger text-center">Deleting comment will be permanent</p>
+            <div class="btn-div text-center">
+                <%= link_to  "Delete", delete_comment_path(current_user.id, @comment.id), class: 'btn btn-sm btn-danger' %>
+            </div>
+        </div>
+    </div>

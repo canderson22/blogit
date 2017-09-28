@@ -1,1 +1,10 @@
-<h1>all blogs</h1>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-3 text-center">All Catogries</h1>
+        <% @categories.each do |c| %>
+            <h2 class="text-info">
+                <%= link_to  "#{c.title}", category_path(c.id) %>
+            </h2>
+        <% end %>
+    </div>
+</div>

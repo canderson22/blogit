@@ -35,9 +35,9 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update_attributes(title: params[:blog][:title], body: params[:blog][:body])
-      redirect_to user_blog_path(@blog)
+      redirect_to user_blog_path(current_user.id, @blog)
     else
-      redirect_to edit_user_blog_path(@blog)
+      redirect_to edit_user_blog_path(current_user.id, @blog)
     end
   end
 

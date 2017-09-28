@@ -1,16 +1,27 @@
-<h1>Users#edit</h1>
-<%= form_for :user do |f| %>
-    <%= f.label :f_name, "First Name:" %>
-    <%= f.text_field :f_name %>
-    <%= f.label :l_name, "Last Name:" %>
-    <%= f.text_field :l_name %>
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password %>
-    <%= f.label :password_confirmation, "Confirm Password:" %>
-    <%= f.password_field :password_confirmation %>
-    <%= f.submit 'Save Changes', class: '' %>
-<% end %>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3 text-center">Edit Account</h1>
+        <%= form_for @user do |f| %>
+            <%= f.label :f_name, "First Name:" %>
+            <%= f.text_field :f_name, class: 'form-control' %>
+            <%= f.label :l_name, "Last Name:" %>
+            <%= f.text_field :l_name, class: 'form-control' %>
+            <%= f.label :password, "Password:" %>
+            <%= f.password_field :password, class: 'form-control' %>
+            <%= f.label :password_confirmation, "Confirm Password:" %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <div class="btn-div text-center">
+                <%= f.submit "Save Changes", class: 'btn btn-success btn-lg' %>
+            </div>
+        <% end %>
+        <hr class="my-4 bg-danger">
+        <h1 class="display-4 text-center">Delete Account</h1>
+        <div class="btn-div text-center">
+            <p class="lead text-danger">Remember deleting you account will be permanent!</p>
+            <%= link_to  "Delete Profile", delete_user_path, method: "delete", class: 'btn btn-danger btn-md' %>
+        </div>
+        <hr class="my-4 bg-danger">
+    </div>
+</div>
 
 
-Do not press this unless you serious dude!
-<%= link_to  "Delete Profile", delete_user_path, method: "delete" %>

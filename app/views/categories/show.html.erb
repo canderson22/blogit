@@ -1,9 +1,16 @@
-<h1>Categories#index</h1>
-<h2><%= @category.title %></h2>
-<% @category.blogs.each do |b| %>
-    <h1><%= b.title %></h1>
-    <h2><%= b.user.id %></h2>
-    <%= link_to  "View Blog", category_public_blog_path(params[:id], b.id) %>
-<% end %>
-
-<%= link_to  "Back", user_path(@user) %>
+<div class="container">
+    <div class="jumbotron">
+        <%= link_to  "Back", categories_path, class: 'btn btn-primary' %>
+        <h1 class="display-3 text-center" style="margin-bottom:10px;"><%= @category.title %></h1>
+        <% @category.blogs.each do |b| %>
+            <div class="border border-blog border-info text-center">
+                <h1><%= b.title %></h1>
+                <h2 class="lead">Created by: <%= b.user.f_name %> <%= b.user.l_name %></h2>
+                <div class="btn-div">
+                    <%= link_to  "View Blog", category_public_blog_path(params[:id], b.id), class: 'btn btn-info' %>
+                </div>
+            </div>
+            <hr class="bg-info">
+        <% end %>
+    </div>
+</div>

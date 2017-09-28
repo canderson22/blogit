@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   def show
     # show specific user
     @user = User.find(params[:id])
-    @categories = Category.all
+    @blog = Blog.where(user_id: @user.id).all.last
+    @pub_blog = Blog.where.not(user_id: @user.id).all.last
+    @comment = Comment.where(user_id: @user.id).all.last
+    
+    
     no_access
   end
 
@@ -41,11 +45,14 @@ class UsersController < ApplicationController
     # update existing user
     @user = User.find(params[:id])
     no_access
-    @user.update_attributes(user_params)
-    flash[:success] = "Profile successfully updated"
-    redirect_to user_path(@user)
-  
- 
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile successfully updated"
+      current_user = @user
+      redirect_to user_path(@user.id)
+    else
+      flash[:danger] = "Please enter a password"
+      redirect_to edit_user_path(@user.id)
+    end
   end
 
   def destroy

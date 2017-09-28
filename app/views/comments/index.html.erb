@@ -1,7 +1,15 @@
-<h1>All your comments</h1>
-<% @comments.each do |c| %>
-    <h1><%= c.blog.title %></h1>
-    <h3><%= c.body %></h3>
-    <%= link_to  "Edit Comment", edit_user_comment_path(params[:user_id], c.id) %>
-<% end %>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3 text-center">My Comments</h1>
+        <% @comments.each do |c| %>
+            <div class="border border-comment border-warning text-center">
+                <h4>Blog commented on: <%= c.blog.title %></h4>
+                <h5 class="text-info"><%= c.body %></h5>
+                <div class="btn-div">
+                    <%= link_to  "Edit Comment", edit_user_comment_path(params[:user_id], c.id), class: 'btn btn-sm btn-info' %>
+                </div>
+            </div>
+        <% end %>  
+    </div>
+</div>
 

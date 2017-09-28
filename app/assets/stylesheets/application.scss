@@ -42,6 +42,7 @@
 
 .btn-div {
     margin-top: 2%;
+    margin-bottom: 5px;
 }
 
 // sidebar nav
@@ -173,5 +174,17 @@ body {
     position: relative;
     margin-right: 0;
   }
+}
+
+// user page
+.border-blog {
+    border-radius: 50%;
+    border-width: 4px !important;
+    margin-bottom: 2%;
+}
+
+.border-comment {
+    border-width: 3px !important;
+    margin-bottom: 2%;  
 }
 

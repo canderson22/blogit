@@ -1,19 +1,46 @@
 <div class="container">
     <div class="jumbotron">
-            <h1>Users#show</h1>
-            <p><%= @user.f_name %></p>
-            <%= link_to  "Edit Profile", edit_user_path %>
-            
-            <div>
-                <%= link_to  "View Blogs", user_blogs_path(@user.id) %>
-            </div>
-            <div>
-                <%= link_to  "View Comments", user_comments_path(@user.id) %>
-            </div>
-            <br><br><hr>
-            <% @categories.each do |c| %>
-                <%= link_to  "#{c.title}", category_path(c) %>
+        <div class="border border-blog border-info text-center">
+            <h2 class="text-info">Latest Blog</h2>
+            <h3 class="text-info"><span class='text-dark'>Title:</span>  <%= @pub_blog.title %></h3>
+            <p class="lead">
+                <%= @pub_blog.body %> <br>
+                <span class="text-info text-small">Created: <%= @pub_blog.created_at.strftime("%b %d, %Y") %></span>
+            </p>
+        </div>
+        <div class="border border-blog border-success text-center">
+            <h2 class="text-success">My Last Blog</h2>
+            <% if !!@blog %>
+                <h3 class="text-success">
+                        <span class='text-dark'>Title:</span>  <%= @blog.title %>
+                </h3>
+                <p class="lead">
+                    <%= @blog.body %> <br>
+                    <span class="text-success text-small">Created: <%= @blog.created_at.strftime("%b %d, %Y") %></span>
+                </p>
+            <% else %>
+            <h2 class="lead">No blogs posted yet...</h2>
+            <%= link_to  "Create a Blog", new_user_blog_path(@user.id) %>
             <% end %>
+        </div>
+        <div class="border border-blog border-warning text-center">
+            <h2 class="text-warning">My Last Comment</h2>
+            <% if !!@comment %>
+                <h3 class="text-warning">
+                    <span class='text-dark'>Blog commented on:</span> <%= @comment.blog.title %>
+                </h3>
+                <p class="lead">
+                    <%= @comment.body %> <br>
+                    <span class="text-warning text-small">Created: <%= @comment.created_at.strftime("%b %d, %Y") %></span>
+                </p>
+                <div class="btn-group-sm" style="margin-bottom:3px;">
+                    <%= link_to  "Edit Comment", edit_user_comment_path(@user.id, @comment.id), class: 'btn btn-warning btn-sm' %>
+                    <%= link_to  "Delete Comment Made", delete_comment_path(@user.id, @comment.id), method: 'delete', class:'btn btn-danger btn-sm' %>
+                </div>
+            <% else %>
+            <h2 class="lead">No comments posted yet...</h2>
+            <% end %>
+        </div>
     </div>
 </div>
 

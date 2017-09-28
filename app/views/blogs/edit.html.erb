@@ -1,8 +1,16 @@
-<h1>Blogs#edit</h1>
-<%= form_for :blog do |f| %>
-    <%= f.label :title, 'Title:', class: '' %>
-    <%= f.text_field :title, class: '' %>
-    <%= f.label :body, 'Body:', class: '' %>
-    <%= f.text_area :body, class: '' %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+        <div class="jumbotron">
+            <%= link_to  "Go Back", user_blog_path(current_user.id, @blog.id), class: 'btn btn-primary' %>
+            <h1 class="display-3 text-center">Edit Blog</h1>
+            <%= form_for :blog do |f| %>
+                <%= f.label :title, 'Title:', class: '' %>
+                <%= f.text_field :title, class: 'form-control' %>
+                <%= f.label :body, 'Body:', class: '' %>
+                <%= f.text_area :body, class: 'form-control' %>
+                <div class="btn-div">
+                    <%= f.submit "Save Changes", class: 'btn btn-success' %>
+                </div>
+            <% end %>
+            <hr>
+        </div>
+    </div>

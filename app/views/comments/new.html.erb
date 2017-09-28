@@ -1,6 +1,13 @@
-<h1>Comments#new</h1>
-<%= form_for :comment do |f| %>
-    <%= f.label :body, "Comment:", class: '' %>
-    <%= f.text_area :body, class: '' %>
-    <%= f.submit "Post Comment" %>
-<% end %>
+<div class="container">
+    <div class="jumbotron">
+        <%= link_to  "Back", category_public_blog_path(params[:category_id], params[:public_blog_id]), class: 'btn btn-primary' %>
+        <h1 class="display-3 text-center">Create Comment</h1>
+        <%= form_for :comment do |f| %>
+            <%= f.label :body, "Comment:", class: '' %>
+            <%= f.text_area :body, class: 'form-control' %>
+            <div class="btn-div">
+                <%= f.submit "Post Comment", class: 'btn btn-success' %>
+            </div>
+        <% end %>
+    </div>
+</div>
