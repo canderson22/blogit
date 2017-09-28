@@ -17,6 +17,11 @@ class UsersController < ApplicationController
 
   def create
     # create new user
+    if logged_in? == true
+      flash[:danger] = "User already logged in, please log out first!"
+      redirect_to user_path(current_user)
+      return
+    end
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id

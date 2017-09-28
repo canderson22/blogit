@@ -1,0 +1,35 @@
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <%= link_to  "Home", user_path(current_user) %>
+                </li>
+                <li class="avatar">
+                    <%= image_tag  "avatar.png" %> <br>
+                    Welcome <%= current_user.f_name %>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Blogs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        <%= link_to  "View All Blogs", categories_path %>
+                    </div>
+                </li>
+                <li>
+                    <%= link_to  "Personal Blogs", user_blogs_path(current_user.id) %>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>

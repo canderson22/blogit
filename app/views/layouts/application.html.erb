@@ -6,13 +6,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   </head>
 
   <body>
-    <div id="wrapper">
+    <div id="main">
       <%= render 'partials/header' %>
       <%= render 'partials/flash' %>
-        <%= yield %>
+      <div id="wrapper">
+        <% if logged_in? %>
+          <%= render 'partials/sidebar' %>
+        <% end %>
+        
+        <div id="page-content-wrapper">
+            <%= yield %>
+        </div>
+
+      </div>
+        
+
+
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
     </div>
     
   </body>
