@@ -118,7 +118,13 @@ body {
 }
 
 .avatar {
-    margin-left: 4%;
+    text-align: center;
+    margin-right: 2%;
+}
+
+.avatar-pic {
+    width: 150px;
+    height: 150px;
 }
 
 .sidebar-nav li a:hover {
