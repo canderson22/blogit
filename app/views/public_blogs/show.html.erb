@@ -5,6 +5,7 @@
         <p class="lead">
             <%= @blog.body %>
         </p>
+        <h4>Comments</h4>
         <% @blog.comments.each do |c| %>
             <h5 style="margin-bottom:15px;" class="text-warning"><%= c.body %> <span class="text-dark">by: <%= c.user.f_name %> <%= c.user.l_name %></span> </h5>
         <% end %>
