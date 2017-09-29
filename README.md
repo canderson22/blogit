@@ -6,7 +6,7 @@ A web application created for users to blog about anything they wish to express 
 
 Click on [BlogIT](https://justblogit.herokuapp.com/) to check out the app.
 
---
+---
 
 ## How it Works:
 
