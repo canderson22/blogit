@@ -2,10 +2,10 @@
     <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <%= link_to  "Home", user_path(current_user) %>
+                    <%= link_to  "Home", user_path(current_user.id) %>
                 </li>
                 <li class="avatar">
-                    <%= image_tag @user.image.url, class: 'avatar-pic' %>
+                    <%= image_tag current_user.image.url, class: 'avatar-pic' %>
                     <br>
                     Welcome <%= current_user.f_name %>
                 </li>
