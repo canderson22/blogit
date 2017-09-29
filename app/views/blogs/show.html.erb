@@ -6,6 +6,9 @@
             </p>
             <div class="btn-div">
                 <%= link_to  "Edit Blog", edit_user_blog_path(current_user.id, @blog), class:'btn btn-warning'%>
+                <hr class="bg-danger">
+                <h3 class="text-danger text-center">Delete Blog</h3>
+                <p class="lead text-danger text-center">Deleting blog will be permanent</p>
                 <%= link_to  "Delete Blog", delete_user_blog_path, method: "delete", class:'btn btn-danger' %>
             </div>
             <div class="btn-div">
