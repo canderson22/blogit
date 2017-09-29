@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about/index'
+
   root 'users#index'
   resources :users do
     resources :blogs
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
 
   post '/categories/:category_id/public_blogs/:public_blog_id/comments/new' => 'comments#create'
 
-
+  get '/about' => 'about#index', as: :about
 
   delete '/logout' => 'sessions#destroy', as: :logout
 end

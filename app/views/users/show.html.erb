@@ -20,7 +20,7 @@
                 </p>
             <% else %>
             <h2 class="lead">No blogs posted yet...</h2>
-            <%= link_to  "Create a Blog", new_user_blog_path(@user.id) %>
+            <%= link_to  "Create a Blog", new_user_blog_path(@user.id), class: 'btn btn-sm btn-info' %>
             <% end %>
         </div>
         <div class="border border-blog border-warning text-center">

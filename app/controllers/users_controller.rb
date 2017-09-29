@@ -9,8 +9,6 @@ class UsersController < ApplicationController
     @blog = Blog.where(user_id: @user.id).all.last
     @pub_blog = Blog.where.not(user_id: @user.id).all.last
     @comment = Comment.where(user_id: @user.id).all.last
-    
-    
     no_access
   end
 
@@ -47,7 +45,6 @@ class UsersController < ApplicationController
     no_access
     if @user.update_attributes(user_params)
       flash[:success] = "Profile successfully updated"
-      current_user = @user
       redirect_to user_path(@user.id)
     else
       flash[:danger] = "Please enter a password"
@@ -72,7 +69,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:f_name, :l_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:f_name, :l_name, :email, :password, :password_confirmation, :image)
   end
   
 end
