@@ -1,6 +1,6 @@
 # BlogIT
 
--
+---
 
 A web application created for users to blog about anything they wish to express thier thoughts.
 
