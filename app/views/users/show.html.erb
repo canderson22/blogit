@@ -6,6 +6,7 @@
             <p class="lead">
                 <%= @pub_blog.body %> <br>
                 <span class="text-info text-small">Created: <%= @pub_blog.created_at.strftime("%b %d, %Y") %></span>
+                <span class="text-info text-small">Created By: <%= @pub_blog.user.f_name %> <%= @pub_blog.user.l_name %></span>
             </p>
         </div>
         <div class="border border-blog border-success text-center">
