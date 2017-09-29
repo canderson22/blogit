@@ -42,7 +42,6 @@ class UsersController < ApplicationController
   def update
     # update existing user
     @user = User.find(params[:id])
-    no_access
     if @user.update_attributes(user_params)
       flash[:success] = "Profile successfully updated"
       redirect_to user_path(@user.id)
