@@ -11,11 +11,14 @@ class BlogsController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
+    
     @blog = Blog.new
     @categories = Category.all
   end
 
   def create
+    
     @blog = Blog.new
     @blog.category = Category.find_by_title(params[:blog][:category])
     @blog.title = params[:blog][:title]
@@ -29,6 +32,8 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    
     @blog = current_user.blogs.find(params[:id])    
   end
 

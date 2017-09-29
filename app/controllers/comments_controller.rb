@@ -1,11 +1,12 @@
 class CommentsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     no_access
     @comments = @user.comments.all
   end
 
   def new
+    @user = current_user
     @comment = Comment.new
   end
 
@@ -17,11 +18,13 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to category_public_blog_path(params[:category_id], params[:public_blog_id])
     else
-      bad
+      redirect_to new_category_public_blog_comment(params[:category_id], params[:public_blog_id])
     end
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    
     @comment = Comment.find(params[:id])
   end
 

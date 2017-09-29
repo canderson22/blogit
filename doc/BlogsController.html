@@ -308,8 +308,6 @@
       <pre class="lines">
 
 
-18
-19
 20
 21
 22
@@ -319,12 +317,16 @@
 26
 27
 28
-29</pre>
+29
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
+  
   <span class='ivar'>@blog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='ivar'>@blog</span><span class='period'>.</span><span class='id identifier rubyid_category'>category</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Category.html" title="Category (class)">Category</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_by_title'>find_by_title</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:blog</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:category</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@blog</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:blog</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span>
@@ -356,14 +358,14 @@
       <pre class="lines">
 
 
-44
-45
-46
-47
-48</pre>
+49
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
   <span class='ivar'>@blog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -390,14 +392,18 @@
       <pre class="lines">
 
 
-31
-32
-33</pre>
+34
+35
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edit'>edit</span>
+  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="User.html" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  
   <span class='ivar'>@blog</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_blogs'>blogs</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>    
 <span class='kw'>end</span></pre>
     </td>
@@ -455,12 +461,16 @@
 13
 14
 15
-16</pre>
+16
+17
+18</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
+  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="User.html" title="User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  
   <span class='ivar'>@blog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='ivar'>@categories</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Category.html" title="Category (class)">Category</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
 <span class='kw'>end</span></pre>
@@ -518,17 +528,17 @@
       <pre class="lines">
 
 
-35
-36
-37
-38
-39
 40
 41
-42</pre>
+42
+43
+44
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/blogs_controller.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
   <span class='ivar'>@blog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -548,7 +558,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Sep 28 19:13:55 2017 by
+  Generated on Thu Sep 28 19:40:24 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>

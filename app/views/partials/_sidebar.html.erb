@@ -27,8 +27,13 @@
                 <li>
                     <%= link_to  "User Settings", edit_user_path(current_user.id) %>
                 </li>
-                <li>
-                    <a href="#">Search</a>
-                </li>
+                <li class="dropdown">
+                        <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Search
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        
+                        </div>
+                    </li>
             </ul>
         </div>

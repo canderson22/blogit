@@ -200,12 +200,16 @@
 
 2
 3
-4</pre>
+4
+5
+6</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/public_blogs_controller.rb', line 2</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span>
+  
   <span class='ivar'>@blogs</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -228,14 +232,18 @@
       <pre class="lines">
 
 
-6
-7
-8</pre>
+8
+9
+10
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/public_blogs_controller.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/public_blogs_controller.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
+  <span class='ivar'>@user</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span>
+  
   <span class='ivar'>@blog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Blog.html" title="Blog (class)">Blog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -248,7 +256,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Sep 28 19:13:55 2017 by
+  Generated on Thu Sep 28 19:40:25 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
