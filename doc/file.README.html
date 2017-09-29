@@ -58,35 +58,115 @@
       </div>
 
       <div id="content"><div id='filecontents'>
-<h1 id="label-README">README</h1>
+<h1 id="label-BlogIT">BlogIT</h1>
 
-<p>This README would normally document whatever steps are necessary to get the
-application up and running.</p>
+<p>-</p>
 
-<p>Things you may want to cover:</p>
+<p>A web application created for users to blog about anything they wish to
+express thier thoughts.</p>
+
+<p>Click on <a href="https://justblogit.herokuapp.com/">BlogIT</a> to check
+out the app.</p>
+
+<p>–</p>
+
+<h2 id="label-How+it+Works-3A">How it Works:</h2>
+
+<p>Go on the site and sign up. After signing up you&#39;ll have the options of
+viewing other users blogs, create your own blogs, and leave comments on
+other blogs.</p>
+
+<p>Each blog created will have your name and the date you created it, it&#39;s
+that easy! If you dont like a comment or blog you made you can easily
+delete them, no worries.</p>
+
+<h2 id="label-Development+and+Technologies+used-3A">Development and Technologies used:</h2>
+
+<p>BlogIT was built using the following technologies:</p>
 <ul><li>
-<p>Ruby version</p>
+<p>HTML</p>
 </li><li>
-<p>System dependencies</p>
+<p>CSS</p>
 </li><li>
-<p>Configuration</p>
+<p>JavaScript</p>
 </li><li>
-<p>Database creation</p>
+<p>jQuery</p>
 </li><li>
-<p>Database initialization</p>
+<p>Ruby</p>
 </li><li>
-<p>How to run the test suite</p>
+<p>Bootstrap front-end framework</p>
 </li><li>
-<p>Services (job queues, cache servers, search engines, etc.)</p>
+<p>Ruby on Rails web application framework</p>
 </li><li>
-<p>Deployment instructions</p>
-</li><li>
-<p>...</p>
+<p>Font-Awesome Icon Library</p>
 </li></ul>
+
+<h2 id="label-Wireframes">Wireframes</h2>
+
+<h3 id="label-Data+Model-3A">Data Model:</h3>
+
+<p><img
+src="https://go.gliffy.com/go/share/image/sydhjf900y7hes3hwwke.png?utm_medium=live-embed&utm_source=trello"></p>
+
+<h3 id="label-wireframe">wireframe</h3>
+
+<p><img
+src="https://go.gliffy.com/go/share/image/s80v6fisalll07xml41p.png?utm_medium=live-embed&utm_source=custom"></p>
+
+<h2 id="label-Approach+taken-3A">Approach taken:</h2>
+
+<p>The approach I took for this app was the MVC model.</p>
+<ul><li>
+<p>Created three models: users, blogs, comments</p>
+</li><li>
+<p>Included a sign up/ log in feature, making the emails unique and using
+bcrypt for the storing the passwords</p>
+</li><li>
+<p>Implemented RESTful routes for each of my models</p>
+</li><li>
+<p>Used CRUD for users, blogs, comments</p>
+</li><li>
+<p>Added a new model category</p>
+</li><li>
+<p>Created two different controllers for the blogs/comments</p>
+</li><li>
+<p>Nested blogs/comments in the user resources and category resources</p>
+</li><li>
+<p>the blogs/comments for the category routes would be used as the public
+viewing pages for the user</p>
+</li><li>
+<p>the blogs/comments for the user routes would be used to access the users
+blogs/comments for CRUD operations</p>
+</li></ul>
+
+<h2 id="label-Installation-2FStart-up-3A">Installation/Start-up:</h2>
+
+<p>Users can access the web application through <a
+href="https://justblogit.herokuapp.com">blogIT</a>, or by downloading the
+git repo. When downloading the git repo, after cloning repo, you must open
+the application in the terminal. Type in the following commands in the
+terminal – &lt;mark&gt;bundle install&lt;/mark&gt;, &lt;mark&gt;rails
+db:create&lt;/mark&gt;, &lt;mark&gt;rails db:migrate&lt;/mark&gt;,
+&lt;mark&gt;rails server&lt;/mark&gt;.</p>
+
+<h2 id="label-Next+Steps">Next Steps</h2>
+
+<p>1) Create functionality where users can create thier own categories.</p>
+
+<p>2) Create a more functional profile editing form</p>
+
+<p>3) Be able to add images and links to blogs</p>
+
+<p>4) Add searching functionality</p>
+
+<h2 id="label-Acknowledgments">Acknowledgments</h2>
+
+<p>Code for sidebar nav based on <a
+href="https://startbootstrap.com/template-overviews/simple-sidebar/">startbootstrap/sidenav</a>.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Fri Sep 29 07:12:28 2017 by
+  Generated on Fri Sep 29 10:15:50 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
